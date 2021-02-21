@@ -1,0 +1,427 @@
+<html>
+<head>
+<title>
+Self Test on Permutation, Combination and Probability
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-right: 1px solid #bbb;
+}
+
+.navbar a:last-child {
+    border-right: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  text-align: left;
+}
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #008055;
+    overflow-x: hidden;
+    padding-top: 10px;
+    margin-top: 36px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    display: block;
+}
+
+.sidenav a:hover {
+    background: #b3ffe6;
+    color: black;
+}
+
+.main {
+    margin-left: 260px;
+    margin-top: 30px;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.left {
+    text-align: left;
+    float: left;
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+.footer {
+	text-align: left;
+    padding: 15px;
+    font-size: 10px;
+    color: white;
+}
+
+.sidenavt {
+	text-align: left;
+    padding: 15px;
+    font-size: 18px;
+	font-weight: bold;
+    color: white;
+}
+
+.sactive {
+    background-color: #b3ffe6;
+    color: black;
+}
+
+.tactive {
+    background-color: #ddd;
+    color: black;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+/* login form */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #008055;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">HOME</a>
+  <a href="jf1.html">JUNIOR FORM</a>
+  <a href="sf1.html" class="tactive"><font color="black">SENIOR FORM</font></a>
+  <a href="n1.html">NOTES</a>
+  <a href="Javascript:;" onclick="document.getElementById('id01').style.display='block'" style="float: right; border-left: 1px solid #bbb;">LOGIN</a>
+  <a href="Javascript:;" onclick="document.getElementById('id02').style.display='block'" style="float:right; border-left: 1px solid #bbb;">REGISTER</a>
+</div>
+
+<div class="sidenav">
+  <a href="sf1.html">Pre-DSE speed practise on Trigonometry and Geometry MC</a>
+  <a href="sf2.html" class="sactive"><font color="black">Self Test on Permutation, Combination and Probability</a>
+  <a href="mailto:s131118@eclass.uccke.edu.hk"><font size="2">Email: s131118@eclass.uccke.edu.hk</font></a>
+  <a href="feedback.html"><font size="2">Feedback</font></a>
+    <div class="footer">
+  	By Grace Li
+  </div>
+</div>
+
+<div class="main">
+  <h1 style="text-align:center">Self Test on Permutation, Combination and Probability</h1>
+  <hr><br>
+  <a href="sf1.html" class="previous round left">&#8249;</a>
+  <a href="#2" class="next round right no-click">&#8250;</a>
+  
+  <br><br><br><hr><br><br>
+  
+  <center>
+  <p>Here are some questions from the HKDSE past papers for you to test yourself on the topics Probability, Combination and Permutation.
+  <br>
+  Do remember to revise before you do this test:))</p>
+  </center>
+  
+  <br><br><hr><br><br>
+  
+  <form id="q1" name="q1" method="post" action="" onSubmit="alert('You got it!');">  
+  <p>Q1.</p>
+  <p>In a bag, there are 4 green pens, 7 blue pens and 8 black pens. If 5 pens are randomly drawn from the bag at the same time,</p>
+  <p>(a) find the probability that exactly 4 green pens are drawn. (2 marks)</p>
+  <p>(b) find the probability that exactly 3 green pens are drawn. (2 marks)</p>
+  <p>(c) find the probability that not more than 2 green pens are drawn. (2 marks)</p>
+  <p>Your answers (input your answers with fractions. Eg. 1/2, 3/4):
+  <p>(a) <input type="text" name="q1a" id="q1a" pattern="5/3876" oninvalid="this.setCustomValidity('Try again!')" oninput="this.setCustomValidity('')" required></p>
+  <p>(b) <input type="text" name="q1b" id="q1b" pattern="35/969" oninvalid="this.setCustomValidity('Try again!')" oninput="this.setCustomValidity('')" required></p>
+  <p>(c) <input type="text" name="q1c" id="q1c" pattern="3731/3876" oninvalid="this.setCustomValidity('Try again!')" oninput="this.setCustomValidity('')" required></p>
+  <p><input type="submit" name="submit" id="submit" value="Check your answers"></p>
+  </form>
+  
+  <br><br><hr><br><br>
+  
+  <form id="q2" name="q2" method="post" action="" onSubmit="alert('You got it!');">
+  <p>Q2.</p>
+  <p>If 4 boys and 5 girls randomly form a queue, find the probability that no boys are next to each other in the queue. (3 marks)</p>
+  <p>Your answers (input your answers with fractions. Eg. 1/2, 5/4):</p>
+  <p><input type="text" name="q2" id="q2" pattern="5/42" oninvalid="this.setCustomValidity('Try again!')" oninput="this.setCustomValidity('')" required></p>
+  <p><input type="submit" name="submit" id="submit" value="Check your answers" onclick="submitted()"></p>
+  </form>
+  
+  <br><br><hr><br><br>
+  
+  <form id="q3" name="q3" method="post" action="" onSubmit="alert('You got it!');">
+  <p>Q3.</p>
+  <p>Bag A contains four cards numbered 1, 3, 5 and 7 respectively while bag B contains five cards numbered 2, 4, 6, 8 and 10 respectively. If one card is randomly drawn from each bag, find the probability that the sum of the two numberes drawn is less than 9. (3 marks)</p>
+  <p>Your answers (input your answers with fractions. Eg. 1/2, 5/4):</p>
+  <p><input type="text" name="q2" id="q2" pattern="3/10" oninvalid="this.setCustomValidity('Try again!')" oninput="this.setCustomValidity('')" required></p>
+  <p><input type="submit" name="submit" id="submit" value="Check your answers"></p>
+  </form>
+
+  <br><br><hr>
+  
+  <footer><center>
+    <a href="#top"><img src="logo.png" width="100" height="100"></a><br>
+	<font size="1">Copyright?</font>
+  </footer></center>
+</div>
+
+<!-- login form -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="login.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username (default: testing)" name="uname" pattern="testing" oninvalid="this.setCustomValidity('Wrong username')" oninput="this.setCustomValidity('')" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password (default: ucckeuccke)" name="psw" pattern="ucckeuccke" oninvalid="this.setCustomValidity('Wrong Password')" oninput="this.setCustomValidity('')" required/>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+<!-- register form -->
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="register.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Choose a username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Choose a password" name="psw" required/>
+        
+      <button type="submit">Register</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
