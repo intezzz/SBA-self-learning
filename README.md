@@ -2,6 +2,8 @@
 
 This is an ICT (Information and Communicating Technology) school based assessment project for my 2019 HKDSE (Hong Kong Diploma of Secondary Education) exam, under the elective titled Multimedia Production and Web Site Development.
 
+The site is currently hosted [here](https://intezzz.github.io/SBA-self-learning/website/)
+
 Below is the guidline of the project.
 
 ## Situation
