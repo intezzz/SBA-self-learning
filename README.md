@@ -4,7 +4,7 @@ This is an ICT (Information and Communicating Technology) school based assessmen
 
 The site is currently hosted [here](https://intezzz.github.io/SBA-self-learning/website/)
 
-Below is the guidline of the project.
+# Assessment guidelines
 
 ## Situation
 
@@ -56,4 +56,4 @@ Create a presentation and/or documents to illustrate the web site. You may want 
 
 ## Project Report
 
-The document that is created to complete tasks 1 and 2 is [here](https://github.com/intezzz/SBA-self-learning/blob/main/README.pdf)
+Project report is linked [here](https://github.com/intezzz/SBA-self-learning/blob/main/README.pdf)
